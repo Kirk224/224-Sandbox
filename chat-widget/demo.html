@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .demo-container {
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .feature-list li {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        .arrow {
+            margin-left: 8px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .cta:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .demo-container {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>Chat Widget Demo</h1>
+        <p>
+            This is a demonstration of the Modern Chat Widget.
+            Click the chat button in the bottom-right corner to see it in action!
+        </p>
+
+        <ul class="feature-list">
+            <li>Fully responsive and mobile-friendly</li>
+            <li>Real-time form validation</li>
+            <li>Auto-formatting phone numbers</li>
+            <li>Smooth animations and transitions</li>
+            <li>Keyboard accessible (press ESC to close)</li>
+            <li>Customizable colors and text</li>
+        </ul>
+
+        <a href="#" class="cta" onclick="document.getElementById('chatWidgetButton').click(); return false;">
+            Try it now <span class="arrow">→</span>
+        </a>
+    </div>
+
+    <!-- Chat Widget Configuration (Optional) -->
+    <script>
+        window.ChatWidgetConfig = {
+            title: "Chat with us",
+            subtitle: "We'll get back to you shortly!",
+            primaryColor: "#667eea",
+            secondaryColor: "#764ba2",
+            position: "bottom-right",
+            onSubmit: function(data) {
+                // In production, send to your server
+                console.log('Form submitted with data:', data);
+
+                // Show alert for demo purposes
+                setTimeout(() => {
+                    alert('Demo: Form data logged to console!\nCheck the browser console to see the submitted data.');
+                }, 3500);
+            }
+        };
+    </script>
+
+    <!-- Load Chat Widget -->
+    <script src="chat-widget.js"></script>
+</body>
+</html>
