@@ -1,16 +1,4 @@
-# Zest Chat Widget
-
-A lightweight, SMS-focused chat widget for capturing leads and initiating conversations.
-
-## Features
-
-- Clean, professional design
-- SMS-based conversation flow
-- UTM parameter tracking
-- Mobile responsive
-- Accessible (ARIA compliant)
-- Success/Error messaging
-- Webhook integration for lead capture
+# Chat Widget
 
 ## Installation
 
